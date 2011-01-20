@@ -1,5 +1,5 @@
 
-if test -d /usr/lib/mozilla/plugins
+if [ -d /usr/lib/mozilla/plugins ]
     set -x MOZ_PLUGIN_PATH /usr/lib/mozilla/plugins
 end
 

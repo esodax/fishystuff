@@ -1,24 +1,31 @@
 
-set compression $argv[1]
-
-if [ (count $argv) -gt 3 ]
-    echo "to many arguments"
+if not [ (count $argv) -ge 2 ]
+    echo "tarcompress: missing arguments"
     exit 1
 end
 
-if [ (count $argv) -eq 3 ]
-    set archive $argv[2]
-    set from $argv[3]
+set compression $argv[1]
+set -e argv[1]
+
+if not contains $compression 'gz' 'bz2' 'xz' 'lzop'
+    echo "compression: '$compression' not supported"
+    exit 1
+end
+
+if [ (count $argv) -ge 2 ]
+    set archive $argv[1]
+    set -e argv[1]
+    set from $argv
 else
-    set archive (echo $argv[2] | tr -d ./).tar.$compression
-    set from $argv[2]
+    set archive (echo $argv[1] | tr -d ./).tar.$compression
+    set from $argv[1]
 end
 
 if [ -e $archive ]
-    echo "$archive: already exists"
+    echo "$archive: already exists!"
     exit 1
 end
 
-tar --{$compression} --totals -cvf $archive $from
+/bin/tar --{$compression} --totals -cvf $archive $from
 
 # vim:ts=4:sw=4:et:ft=fish:

@@ -11,6 +11,8 @@ function run_gpg-agent
             for l in (cat $GPGINFO)
                 set -gx (echo $l | cut -d= -f1) (echo $l | cut -d= -f2)
             end
+        else
+            echo 'ERROR: gpg-agent info file not found'
         end
     else
         echo 'WARN: gpg-agent not found/installed'

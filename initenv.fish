@@ -11,8 +11,12 @@ set -x HOST (hostname)
 set -x UID (id -u)
 set -x TMPDIR /tmp
 
-# Source include-scripts
-for s in $HOME/.config/fish/include/*.fish
+# Set legacy variables
+set -x OSTYPE (uname -o)
+set -x MACHTYPE (uname -m)
+
+# Source include (profile) scripts
+for s in $FISH/include/*.fish
     . $s
 end
 

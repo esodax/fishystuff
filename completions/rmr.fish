@@ -7,3 +7,5 @@ complete -c rmr -s v -l verbose --description "Explain what is done"
 complete -c rmr -s h -l help --description "Display help and exit"
 complete -c rmr -l version --description "Display version and exit"
 
+complete -c rmr -f -a "(/usr/bin/find . -maxdepth 1 -mindepth 1 -type d -exec basename \{\} \;)"
+

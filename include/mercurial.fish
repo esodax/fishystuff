@@ -1,5 +1,5 @@
 
-if test -x /usr/bin/hg
+if [ -x /usr/bin/hg ]
     set -x HG /usr/bin/hg
 end
 

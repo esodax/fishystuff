@@ -1,11 +1,11 @@
 
-for b in 'lynx' 'links'
-    if test -x /usr/bin/$b
+for b in 'lynx' 'links' 'w3m'
+    if [ -x /usr/bin/$b ]
         set -x BROWSER $b
         break
     end
 end
-if test -x /usr/bin/vim
+if [ -x /usr/bin/vim ]
     set -x EDITOR vim
 else
     set -x EDITOR vi

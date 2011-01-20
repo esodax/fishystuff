@@ -1,5 +1,5 @@
 
-if test -d $HOME/.virtualenvs
+if [ -d $HOME/.virtualenvs ]
     set -x WORKON_HOME $HOME/.virtualenvs
 else
     set -x WORKON_HOME /tmp

@@ -26,7 +26,7 @@ for displayname in $display $HOST$display
         echo "add $displayname . $mcookie" | xauth -q
         set removelist $displayname $removelist
     else
-        set dummy (pp "$dummy + 1")
+        set dummy (math "$dummy + 1")
         echo "add :$dummy . $authcookie" | xauth -q -f $xserverauthfile
     end
 end

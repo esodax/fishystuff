@@ -1,5 +1,5 @@
 
-if test -z "$DISPLAY"
+if [ -z "$DISPLAY" ]
     set -x TERM linux
 else
     set -x TERM rxvt-unicode-256color

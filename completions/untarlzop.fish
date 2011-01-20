@@ -1,3 +1,3 @@
 
-complete -c untarlzop -f -a "(find *.lzop)"
+complete -c untarlzop -f -a "(/usr/bin/find *.tar.lzop -type f)"
 

@@ -1,13 +1,11 @@
 
 function mkvirtualenv -d "Make a new virtual environment in $WORKON_HOME"
     switch $argv
-
         case python
-        /usr/bin/virtualenv $argv
+        virtualenv $argv
 
         case love
-        #TODO
-
+        #TODO ...
     end
 end
 

@@ -1,15 +1,23 @@
 
-if status --is-login
+if begin; status --is-login; and [ -z "$__ENVIRON__" ]; end
 
-    . $HOME/.config/fish/__init__.fish
+    # Set fish config directory
+    set -gx FISH $HOME/.config/fish
 
-    run_gpg-agent
-    autostart
+    # Default universal variables
+    . $FISH/universal.fish
 
-else
+    # Initialize the environment
+    . $FISH/initenv.fish
 
-    set BROWSER firefox
+    # Source startup commands
+    . $FISH/autostart.fish
 
+    set -x __ENVIRON__ true
+end
+
+if status --is-interactive
+    . $FISH/rc.fish
 end
 
 # vim:ts=4:sw=4:et:ft=fish:

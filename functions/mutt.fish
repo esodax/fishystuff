@@ -2,15 +2,11 @@
 function mutt -d "easy way to 'mutt' an account"
     for account in ~/.mutt/imap/*
         if [ "$argv" = (basename $account) ]
-            /usr/bin/mutt -e "source $account"
-            set -g done_mutting True
-            break
+            command mutt -e "source $account"
+            return
         end
     end
-    if not set -q done_mutting
-        /usr/bin/mutt $argv
-    end
-    set -e done_mutting
+    command mutt $argv
 end
 
 # vim:ts=4:sw=4:et:ft=fish:

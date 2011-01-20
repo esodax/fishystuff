@@ -1,11 +1,11 @@
 
 # Primary operations
-complete -c pkg -s A -f -n '__fish_not_contain_opt -s F -s U -s Q -s R -s S -s h' -d 'Add a package to the system'
-complete -c pkg -s F -f -n '__fish_not_contain_opt -s A -s U -s Q -s R -s S -s h' -d 'Upgrade a package which is already in the system'
-complete -c pkg -s U -f -n '__fish_not_contain_opt -s A -s F -s Q -s R -s S -s h' -d 'Upgrade or add a package in the system'
-complete -c pkg -s Q -f -n '__fish_not_contain_opt -s A -s F -s U -s R -s S -s h' -d 'Query the package database'
-complete -c pkg -s R -f -n '__fish_not_contain_opt -s A -s F -s U -s Q -s S -s h' -d 'Remove packages from the system'
-complete -c pkg -s S -f -n '__fish_not_contain_opt -s A -s F -s U -s Q -s R -s h' -d 'Synchronize packages'
+complete -c pkg -s D -f -n '__fish_not_contain_opt -s Q -s R -s S -s T -s U -s V -s h' -d 'Modify the package database'
+complete -c pkg -s Q -f -n '__fish_not_contain_opt -s D -s R -s S -s T -s U -s V -s h' -d 'Query the package database'
+complete -c pkg -s R -f -n '__fish_not_contain_opt -s D -s Q -s S -s T -s U -s V -s h' -d 'Remove package(s) from the system'
+complete -c pkg -s S -f -n '__fish_not_contain_opt -s D -s Q -s R -s T -s U -s V -s h' -d 'Synchronize packages'
+complete -c pkg -s T -f -n '__fish_not_contain_opt -s D -s Q -s R -s S -s U -s V -s h' -d 'Check dependencies'
+complete -c pkg -s U -f -n '__fish_not_contain_opt -s D -s Q -s R -s S -s T -s V -s h' -d 'Upgrade or add a package(s) to the system'
 complete -c pkg -o V -f -d 'Display version and exit'
 
 # General options
